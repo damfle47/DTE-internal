@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5j6vfil5sdx6"]
+[gd_scene load_steps=6 format=3 uid="uid://5j6vfil5sdx6"]
 
 [ext_resource type="Script" uid="uid://bh0ksx1b2d818" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://dqauh4qwuvwad" path="res://icon.svg" id="2_ghijl"]
@@ -18,9 +18,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
+size = Vector2(124, 123)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ij6vw")
 metadata/_edit_horizontal_guides_ = [54.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dd465")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ij6vw")
