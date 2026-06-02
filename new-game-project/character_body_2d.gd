@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var timer = $Timer 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -21,5 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("ui_right"):
+		timer.start()
