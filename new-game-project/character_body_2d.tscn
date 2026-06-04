@@ -34,3 +34,15 @@ sprite_frames = SubResource("SpriteFrames_dd465")
 position = Vector2(0, -0.5)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Timer"]
+modulate = Color(0.68432, 0.000352606, 0.684315, 1)
+offset_left = -306.0
+offset_top = -165.0
+offset_right = -75.0
+offset_bottom = -138.0
+fill_mode = 1
+metadata/_edit_use_anchors_ = true

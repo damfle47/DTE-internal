@@ -30,14 +30,3 @@ position = Vector2(7, -42)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
-
-[node name="Timer2" type="Timer" parent="CharacterBody2D"]
-wait_time = 15.0
-
-[node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D/Timer2"]
-offset_left = -281.0
-offset_top = -203.0
-offset_right = -54.0
-offset_bottom = -176.0
-fill_mode = 1
-show_percentage = false
