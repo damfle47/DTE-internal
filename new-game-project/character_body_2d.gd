@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var health: float
 
-@onready var health_bar: ProgressBar = $ProgressBar
+@onready var health_bar: Timer = $ProgressBar
 
 func _ready():
 	health = max_health
