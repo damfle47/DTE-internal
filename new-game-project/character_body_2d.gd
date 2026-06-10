@@ -9,8 +9,13 @@ const JUMP_VELOCITY = -400.0
 var health : float
 var movement_started := false
 
+@onready var health_bar: ProgressBar = $ProgressBar
+
 func _ready():
 	health = max_health
+	
+	health_bar.max_value = max_health
+	health_bar.value = health
 
 func _physics_process(delta):
 	# Gravity
@@ -33,7 +38,8 @@ func _physics_process(delta):
 	# Drain health after moving
 	if movement_started:
 		health -= health_drain_per_second * delta
-		print(health)
+		health = max(health, 0)
+		health_bar.value = health
 
 	if health <= 0:
 		die()

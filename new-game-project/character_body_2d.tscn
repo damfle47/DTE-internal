@@ -34,3 +34,11 @@ sprite_frames = SubResource("SpriteFrames_dd465")
 position = Vector2(0, -0.5)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.619309, 0.00154018, 0.788493, 1)
+offset_left = -578.0
+offset_top = -324.0
+offset_right = -320.0
+offset_bottom = -297.0
+show_percentage = false
