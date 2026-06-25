@@ -13,16 +13,15 @@ var movement_started := false
 
 func _ready():
 	health = max_health
-	
+
 	health_bar.max_value = max_health
 	health_bar.value = health
 
 func _physics_process(delta):
-	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Jump
+
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -46,6 +45,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func heal_full():
+	health = max_health
+	health_bar.value = health
+
 func die():
 	print("Player died!")
 	queue_free()
+
+
+func _on_health_pickup_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
