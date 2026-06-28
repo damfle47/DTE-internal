@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Horizontal movement
+
 	var direction := Input.get_axis("ui_left", "ui_right")
 
 	if direction:
@@ -45,6 +45,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+# Heal when pickinng up the health pickup.
 func heal_full():
 	health = max_health
 	health_bar.value = health
@@ -55,4 +56,4 @@ func die():
 
 
 func _on_health_pickup_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass 

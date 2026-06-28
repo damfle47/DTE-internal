@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxw05ry10hrk2"]
 
 [ext_resource type="Script" uid="uid://bo56qciefuiqy" path="res://health_pickup.gd" id="1_01648"]
-[ext_resource type="Texture2D" uid="uid://dr4cqrs3ofupw" path="res://New Piskel (22).png" id="2_awyve"]
+[ext_resource type="Texture2D" uid="uid://cgplur0fse8mi" path="res://New Piskel (25).png" id="2_awyve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awyve"]
 size = Vector2(32, 32)

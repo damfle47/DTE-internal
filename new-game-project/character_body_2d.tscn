@@ -1,42 +1,39 @@
 [gd_scene load_steps=12 format=3 uid="uid://5j6vfil5sdx6"]
 
 [ext_resource type="Script" uid="uid://bh0ksx1b2d818" path="res://character_body_2d.gd" id="1_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://hxej67pu3mqy" path="res://New Piskel (23).png" id="2_ij6vw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
-atlas = ExtResource("2_ij6vw")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://uusds21ors7t" path="res://New Piskel (26).png" id="2_ij6vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghijl"]
 atlas = ExtResource("2_ij6vw")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44cfe"]
 atlas = ExtResource("2_ij6vw")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd465"]
 atlas = ExtResource("2_ij6vw")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhvu3"]
 atlas = ExtResource("2_ij6vw")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4sjlk"]
 atlas = ExtResource("2_ij6vw")
-region = Rect2(64, 32, 32, 32)
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp52p"]
 atlas = ExtResource("2_ij6vw")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ct3r"]
+atlas = ExtResource("2_ij6vw")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dd465"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kp85"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ij6vw")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ghijl")
 }, {
@@ -54,14 +51,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qp52p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ct3r")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
-size = Vector2(168, 140)
+size = Vector2(163.948, 138)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -71,12 +71,11 @@ metadata/_edit_horizontal_guides_ = [54.0]
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.999999, 12.5)
 scale = Vector2(2.5625, 2.15625)
-sprite_frames = SubResource("SpriteFrames_dd465")
+sprite_frames = SubResource("SpriteFrames_1kp85")
 autoplay = "default"
-frame_progress = 0.750029
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 13)
+position = Vector2(0.986898, 12.5)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ij6vw")
 
