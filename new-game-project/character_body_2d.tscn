@@ -64,7 +64,7 @@ animations = [{
 size = Vector2(163.948, 138)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4805, 0.508149)
 script = ExtResource("1_ij6vw")
 metadata/_edit_horizontal_guides_ = [54.0]
 
