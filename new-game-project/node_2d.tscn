@@ -22,7 +22,7 @@ sources/1 = SubResource("TileSetAtlasSource_q6r6c")
 metadata/_edit_horizontal_guides_ = [0.0]
 
 [node name="NewPiskel(26)(2)" type="Sprite2D" parent="."]
-position = Vector2(3474, -3440)
+position = Vector2(3475, -3440)
 scale = Vector2(642.625, 633.375)
 texture = ExtResource("4_0hol4")
 
