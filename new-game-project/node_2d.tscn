@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b44qqkpgtvu32"]
+[gd_scene load_steps=8 format=3 uid="uid://b44qqkpgtvu32"]
 
 [ext_resource type="PackedScene" uid="uid://5j6vfil5sdx6" path="res://character_body_2d.tscn" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://drxik2ju0f37w" path="res://New Piskel (21).png" id="2_0hol4"]
 [ext_resource type="PackedScene" uid="uid://cxw05ry10hrk2" path="res://health_pickup.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://dyxbajon0ba4g" path="res://New Piskel (26) (2).png" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://drj0pm1r58th1" path="res://area_2d.tscn" id="5_q6r6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -22,7 +23,7 @@ sources/1 = SubResource("TileSetAtlasSource_q6r6c")
 metadata/_edit_horizontal_guides_ = [0.0]
 
 [node name="NewPiskel(26)(2)" type="Sprite2D" parent="."]
-position = Vector2(3475, -3440)
+position = Vector2(4584, -2927)
 scale = Vector2(642.625, 633.375)
 texture = ExtResource("4_0hol4")
 
@@ -50,5 +51,8 @@ position = Vector2(5692, -464)
 
 [node name="HealthPickup4" parent="." instance=ExtResource("3_epypp")]
 position = Vector2(8134, -260)
+
+[node name="Area2D" parent="." instance=ExtResource("5_q6r6c")]
+position = Vector2(255, -50)
 
 [connection signal="body_entered" from="HealthPickup" to="CharacterBody2D" method="_on_health_pickup_body_entered"]

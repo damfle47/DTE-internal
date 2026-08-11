@@ -6,25 +6,24 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var health : float
+var health: float
 var movement_started := false
 
 @onready var health_bar: ProgressBar = $ProgressBar
 
+
 func _ready():
 	health = max_health
-
 	health_bar.max_value = max_health
 	health_bar.value = health
+
 
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 
@@ -45,10 +44,21 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-# Heal when pickinng up the health pickup.
+
+func take_damage(amount: float):
+	health -= amount
+	health = max(health, 0)
+	health_bar.value = health
+
+	if health <= 0:
+		die()
+
+
+# Heal when picking up the health pickup
 func heal_full():
 	health = max_health
 	health_bar.value = health
+
 
 func die():
 	print("Player died!")
@@ -56,4 +66,4 @@ func die():
 
 
 func _on_health_pickup_body_entered(body: Node2D) -> void:
-	pass 
+	pass
