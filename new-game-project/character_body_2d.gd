@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left","right")
 
 	if direction:
 		velocity.x = direction * SPEED
@@ -67,3 +67,7 @@ func die():
 
 func _on_health_pickup_body_entered(body: Node2D) -> void:
 	pass
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

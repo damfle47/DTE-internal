@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b44qqkpgtvu32"]
+[gd_scene load_steps=10 format=3 uid="uid://b44qqkpgtvu32"]
 
 [ext_resource type="PackedScene" uid="uid://5j6vfil5sdx6" path="res://character_body_2d.tscn" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://drxik2ju0f37w" path="res://New Piskel (21).png" id="2_0hol4"]
 [ext_resource type="PackedScene" uid="uid://cxw05ry10hrk2" path="res://health_pickup.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://dyxbajon0ba4g" path="res://New Piskel (26) (2).png" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://drj0pm1r58th1" path="res://area_2d.tscn" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://rwgskwvkldm4" path="res://area_2d_2.gd" id="6_kdubu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -19,12 +20,15 @@ texture = ExtResource("2_0hol4")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_q6r6c")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(15338, 222)
+
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [0.0]
 
 [node name="NewPiskel(26)(2)" type="Sprite2D" parent="."]
-position = Vector2(4584, -2927)
-scale = Vector2(642.625, 633.375)
+position = Vector2(4322, -3341.5)
+scale = Vector2(661.437, 645.344)
 texture = ExtResource("4_0hol4")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_0e48y")]
@@ -52,7 +56,16 @@ position = Vector2(5692, -464)
 [node name="HealthPickup4" parent="." instance=ExtResource("3_epypp")]
 position = Vector2(8134, -260)
 
-[node name="Area2D" parent="." instance=ExtResource("5_q6r6c")]
-position = Vector2(255, -50)
+[node name="Knife" parent="." instance=ExtResource("5_q6r6c")]
+position = Vector2(1895, -227)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(191, 823)
+script = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(6350, -5)
+shape = SubResource("RectangleShape2D_d21ai")
 
 [connection signal="body_entered" from="HealthPickup" to="CharacterBody2D" method="_on_health_pickup_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_entered"]
