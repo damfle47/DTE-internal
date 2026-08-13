@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwykdgnvvil14"]
+
+[ext_resource type="Script" uid="uid://c6cqayp11q1cx" path="res://Bakery - Win Screen.gd" id="1_dm4xh"]
+[ext_resource type="Texture2D" uid="uid://kv33llucuysk" path="res://New Piskel (29).png" id="2_gi1ja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm4xh"]
+size = Vector2(52, 48)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_dm4xh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gi1ja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_dm4xh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
