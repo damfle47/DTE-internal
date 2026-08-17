@@ -5,7 +5,7 @@ extends Area2D
 @export var stay_down_time: float = 1.0
 @export var rise_time: float = 0.3
 @export var wait_time: float = 0.5
-@export var damage: int = 50
+@export var damage: int = 90 
 
 var start_position: Vector2
 
