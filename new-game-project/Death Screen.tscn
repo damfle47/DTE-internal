@@ -1,10 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://ch337367vafrh"]
 
-[ext_resource type="Texture2D" uid="uid://ba18vi5s5thhu" path="res://images.jpg" id="1_8evjy"]
+[ext_resource type="Texture2D" uid="uid://cqa182fyqwgrf" path="res://New Piskel (26) (4).png" id="1_8evjy"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.99999, -97)
+scale = Vector2(38.9844, 21.8438)
 texture = ExtResource("1_8evjy")
 
 [node name="Label" type="Label" parent="."]
@@ -17,3 +19,4 @@ theme_override_colors/font_outline_color = Color(0.352572, 4.42201e-07, 1.44392e
 theme_override_constants/outline_size = 29
 theme_override_font_sizes/font_size = 134
 text = "You Lose!"
+metadata/_edit_use_anchors_ = true
